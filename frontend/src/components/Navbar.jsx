@@ -5,6 +5,7 @@ import {
   FaBars, FaTimes, FaStore, FaSearch, FaUser
 } from 'react-icons/fa';
 import './Navbar.css';
+import logo from '../../public/bg_removerd_logo.png'; // Ensure you have a logo image in this path
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
         
         {/* Logo */}
         <Link to="/" className="nav-logo" onClick={() => setIsMobileMenuOpen(false)}>
-          ShopHub<span className="logo-dot">.</span>
+       <img src={logo} alt="Premium Products Logo" className="logo-image" />
         </Link>
 
         {/* Desktop Search */}

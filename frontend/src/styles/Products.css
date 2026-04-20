@@ -1,121 +1,173 @@
-/* Business Grid Styling */
-.business-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 5rem;
+/* Core Layout - Light Mode */
+.products-page {
+  position: relative;
+  min-height: 100vh;
+  background-color: #ffffff; /* Pure White */
+  color: #1a1a1a;
+  padding: 100px 0;
+  overflow: hidden;
 }
 
-.business-card {
+/* Background Ambient Glow (Subtle Blue Tint) */
+.bg-blur-effect {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+  transform: translateX(-50%);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.products-container {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 28px;
-  padding: 3rem 2rem;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Premium Header */
+.shop-header-minimal {
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  overflow: hidden;
+  margin-bottom: 80px;
+}
+
+.badge-premium {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #0ea5e9;
+  border: 1.5px solid #e2e8f0;
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: #f8fafc;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -2px;
+  margin: 20px 0;
+}
+
+.hero-subtitle {
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* The Premium Card - Light Version */
+.premium-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0; /* Crisp border */
+  border-radius: 24px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  border-color: #0ea5e9;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
 
-.business-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(56, 189, 248, 0.4);
-}
-
-.business-icon-wrapper {
-  font-size: 2.5rem;
-  color: #38bdf8;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
-}
-
-.business-tag {
-  display: inline-block;
+.unit-status {
   font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #94a3b8;
-  margin-bottom: 0.75rem;
-}
-
-.business-title {
-  font-size: 2rem;
-  color: white;
   font-weight: 700;
-  margin-bottom: 1rem;
+  color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
 }
 
-.business-description {
+.premium-icon {
+  font-size: 2rem;
+  color: #0f172a; /* Dark icons for contrast */
+}
+
+.unit-tag {
   color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.unit-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 10px 0 15px 0;
+  color: #0f172a;
+}
+
+.unit-description {
+  color: #475569;
   line-height: 1.6;
   font-size: 1rem;
+  margin-bottom: 30px;
 }
 
-/* Background Glow Effect on Hover */
-.business-hover-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.1), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.business-card:hover .business-hover-glow {
-  opacity: 1;
-}
-
-/* Responsive Scaling */
-@media (max-width: 768px) {
-  .business-title {
-    font-size: 1.5rem;
-  }
-  .business-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* Portal Button Styling */
-.btn-portal {
-  margin-top: 2rem;
-  padding: 0.8rem 1.8rem;
-  background: rgba(56, 189, 248, 0.05);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  color: #38bdf8;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
+/* Premium Button - High Contrast Dark */
+.portal-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #0f172a; /* Dark button on white card */
+  color: #ffffff;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  z-index: 2; /* Ensures clickability above hover glows */
 }
 
-.arrow-icon {
-  font-size: 0.8rem;
+.portal-link:hover {
+  background: #0ea5e9;
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3);
+}
+
+.portal-arrow {
   transition: transform 0.3s ease;
 }
 
-.btn-portal:hover {
-  background: #38bdf8;
-  color: #0f172a;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-}
-
-.btn-portal:hover .arrow-icon {
+.portal-link:hover .portal-arrow {
   transform: translateX(5px);
 }
 
-/* Subtle adjustment to the card to accommodate the button */
-.business-card {
-  justify-content: space-between; /* Keeps icon at top and button at bottom */
-  min-height: 400px;
+/* Footer Section */
+.footer-status {
+  margin-top: 80px;
+  text-align: center;
+  opacity: 0.6;
+  color: #64748b;
+}
+
+.shield-icon {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-status p {
+  font-size: 0.75rem;
+  font-weight: 500;
 }

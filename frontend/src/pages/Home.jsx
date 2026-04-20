@@ -11,23 +11,24 @@ import {
   FaArrowRight
 } from 'react-icons/fa';
 import '../styles/Home.css';
+import logo from '../../public/bg_removerd_logo.png'; // Add logo import
 
 const Home = ({ userName = "Visionary" }) => {
   const features = [
     {
       icon: <FaRocket />,
-      title: "Lightning Fast",
-      description: "Experience unparalleled performance with our optimized infrastructure that delivers results in milliseconds."
+      title: "Eduction tracking ",
+      description: "Experience unparalleled performance with our optimized results that delivers in milliseconds."
     },
     {
       icon: <FaShieldAlt />,
-      title: "Enterprise Security",
-      description: "Bank-grade encryption and advanced threat protection keep your data safe and compliant."
+      title: "Marks & Performance ",
+      description: "According ot you marks explain the what is your strength and weakness and how to improve it"
     },
     {
       icon: <FaCloudUploadAlt />,
-      title: "Cloud Native",
-      description: "Seamlessly scale your operations with our cloud-first architecture designed for growth."
+      title: "Domains ",
+      description: "Guide according to you goals and interest to choose the best domain for you and how to excel in it"
     },
     {
       icon: <FaChartLine />,
@@ -47,10 +48,10 @@ const Home = ({ userName = "Visionary" }) => {
   ];
 
   const stats = [
-    { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "10K+", label: "Active Users" },
-    { number: "50M+", label: "Transactions" },
-    { number: "150+", label: "Countries" }
+    { number: "99%", label: "Uptime Guarantee" },
+    { number: "5", label: "Active Users" },
+    { number: "0", label: "Transactions" },
+    { number: "India", label: "Country" }
   ];
 
   return (
@@ -89,12 +90,13 @@ const Home = ({ userName = "Visionary" }) => {
           </div>
           
           <div className="social-proof">
-            <p>Trusted by the world's most innovative teams</p>
+            <p>Trusted by the most innovative members</p>
             <div className="client-logos">
-              <span>TECHNO</span> <span className="separator">•</span> 
-              <span>LUMINA</span> <span className="separator">•</span> 
-              <span>NEXUS</span> <span className="separator">•</span> 
-              <span>AETHER</span>
+              <span>SRINIVASA RAO</span> <span className="separator">•</span> 
+              <span>KUMAR SWAMI</span> <span className="separator">•</span> 
+              <span>SAIEF</span> <span className="separator">•</span> 
+              <span>RAHIM</span> <span className="separator">•</span> 
+              <span>SREESANTH</span> 
             </div>
           </div>
         </div>
@@ -105,7 +107,7 @@ const Home = ({ userName = "Visionary" }) => {
               <div className="dot red"></div>
               <div className="dot yellow"></div>
               <div className="dot green"></div>
-              <div className="card-title">premium_dashboard</div>
+              <div className="card-title">Support</div>
             </div>
             <div className="card-body">
               <div className="skeleton-line long"></div>
@@ -170,7 +172,7 @@ const Home = ({ userName = "Visionary" }) => {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="cta-content">
-          <h2>Ready to transform your business?</h2>
+          <h2>Start your journey with us</h2>
           <p>Join thousands of innovators who are already building the future with us</p>
           <div className="cta-buttons">
             <Link to="/register" className="btn-primary cta-btn">
@@ -186,7 +188,7 @@ const Home = ({ userName = "Visionary" }) => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="newsletter">
+      {/* <section className="newsletter">
         <div className="newsletter-content">
           <h3>Stay in the loop</h3>
           <p>Get the latest updates, features, and insights delivered to your inbox</p>
@@ -205,7 +207,7 @@ const Home = ({ userName = "Visionary" }) => {
             No spam. Unsubscribe anytime.
           </p>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 };

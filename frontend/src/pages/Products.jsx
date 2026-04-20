@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGraduationCap, FaCogs, FaProjectDiagram, FaArrowRight } from 'react-icons/fa';
+import { FaGraduationCap, FaCogs, FaProjectDiagram, FaArrowRight, FaShieldAlt } from 'react-icons/fa';
 import '../styles/Products.css';
 
 const Products = () => {
@@ -10,7 +10,8 @@ const Products = () => {
       description: "A premier GATE examination simulation and test series platform designed for high-performance aspirants.",
       icon: <FaGraduationCap />,
       tag: "Education Tech",
-      link: "https://test-series-frontend-student.onrender.com" // Replace with your actual link
+      link: "https://test-series-frontend-student.onrender.com",
+      status: "Live Access"
     },
     {
       id: 'solutions',
@@ -18,7 +19,8 @@ const Products = () => {
       description: "Custom software architecture and high-scalability digital infrastructure for modern enterprises.",
       icon: <FaCogs />,
       tag: "B2B Infrastructure",
-      link: "https://test-series-frontend-student.onrender.com"
+      link: "https://test-series-frontend-student.onrender.com",
+      status: "Enterprise Only"
     },
     {
       id: 'ventures',
@@ -26,59 +28,64 @@ const Products = () => {
       description: "Incubating next-generation AI and hardware startups with a focus on sustainable innovation.",
       icon: <FaProjectDiagram />,
       tag: "Venture Capital",
-      link: "https://test-series-frontend-student.onrender.com"
+      link: "https://test-series-frontend-student.onrender.com",
+      status: "Strategic"
     }
   ];
 
   return (
     <div className="products-page fade-in">
+      <div className="bg-blur-effect"></div> {/* Premium background element */}
+      
       <div className="products-container">
-        
-        {/* Minimal Executive Header */}
         <header className="shop-header-minimal">
-          <span className="badge">Portfolio Verticals</span>
+          <div className="top-line"></div>
+          <span className="badge-premium">System Directory</span>
           <h1 className="hero-title">
-            Our <span className="gradient-text">Business</span>
+            Executive <span className="gradient-text">Verticles</span>
           </h1>
           <p className="hero-subtitle">
-            Diversified sectors united by a single vision: 
-            Driving the future through technical excellence.
+            Strategic business units engineered for systemic efficiency and global scale.
           </p>
-          <div className="header-line"></div>
         </header>
 
-        {/* Business Section Grid */}
-        <section className="business-grid">
+        <section className="business-grid-premium">
           {businessUnits.map((unit) => (
-            <div key={unit.id} className="business-card">
-              <div className="business-icon-wrapper">
-                {unit.icon}
-              </div>
-              <div className="business-content">
-                <span className="business-tag">{unit.tag}</span>
-                <h3 className="business-title">{unit.title}</h3>
-                <p className="business-description">{unit.description}</p>
+            <div key={unit.id} className="premium-card">
+              <div className="card-top">
+                <span className="unit-status">{unit.status}</span>
+                <div className="premium-icon">{unit.icon}</div>
               </div>
 
-              {/* New External Link Button */}
-              <a 
-                href={unit.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-portal"
-              >
-                Launch Platform <FaArrowRight className="arrow-icon" />
-              </a>
+              <div className="card-content">
+                <span className="unit-tag">{unit.tag}</span>
+                <h3 className="unit-title">{unit.title}</h3>
+                <p className="unit-description">{unit.description}</p>
+              </div>
 
-              <div className="business-hover-glow"></div>
+              <div className="card-action">
+                <a 
+                  href={unit.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="portal-link"
+                >
+                  <span>Initialize Portal</span>
+                  <FaArrowRight className="portal-arrow" />
+                </a>
+              </div>
+              
+              {/* Decorative premium elements */}
+              <div className="card-corner"></div>
+              <div className="inner-glow"></div>
             </div>
           ))}
         </section>
 
-        {/* Footer Note */}
-        <div className="vault-status">
-          <p>Collaborations for 2026 are currently in review.</p>
-        </div>
+        <footer className="footer-status">
+          <FaShieldAlt className="shield-icon" />
+          <p>Encrypted Session // © 2026 Organization Global</p>
+        </footer>
       </div>
     </div>
   );
