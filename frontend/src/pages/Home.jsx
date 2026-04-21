@@ -8,50 +8,54 @@ import {
   FaChartLine,
   FaUsers,
   FaCrown,
-  FaArrowRight
+  FaArrowRight,
+  FaGraduationCap,
+  FaClipboardList,
+  FaTrophy,
+  FaBrain
 } from 'react-icons/fa';
 import '../styles/Home.css';
-import logo from '../../public/bg_removerd_logo.png'; // Add logo import
+import logo from '../../public/bg_removerd_logo.png';
 
 const Home = ({ userName = "Visionary" }) => {
   const features = [
     {
-      icon: <FaRocket />,
-      title: "Eduction tracking ",
-      description: "Experience unparalleled performance with our optimized results that delivers in milliseconds."
+      icon: <FaGraduationCap />,
+      title: "Test Series",
+      description: "Comprehensive test series designed to simulate real exam conditions with adaptive difficulty levels and instant feedback."
     },
     {
-      icon: <FaShieldAlt />,
-      title: "Marks & Performance ",
-      description: "According ot you marks explain the what is your strength and weakness and how to improve it"
+      icon: <FaClipboardList />,
+      title: "Performance Analytics",
+      description: "Get detailed mark analysis that identifies your strengths and weaknesses with personalized improvement roadmaps."
     },
     {
-      icon: <FaCloudUploadAlt />,
-      title: "Domains ",
-      description: "Guide according to you goals and interest to choose the best domain for you and how to excel in it"
+      icon: <FaBrain />,
+      title: "Smart Domain Guidance",
+      description: "AI-powered career path recommendations based on your goals, interests, and performance patterns."
     },
     {
       icon: <FaChartLine />,
-      title: "Real-time Analytics",
-      description: "Gain actionable insights with powerful analytics and customizable dashboards."
+      title: "Progress Tracking",
+      description: "Visual dashboards showing your growth trajectory, topic mastery, and comparative performance metrics."
     },
     {
       icon: <FaUsers />,
-      title: "Team Collaboration",
-      description: "Empower your team with collaborative tools that streamline workflows and boost productivity."
+      title: "Peer Learning Community",
+      description: "Connect with fellow aspirants, share insights, and participate in group discussions and challenges."
     },
     {
-      icon: <FaCrown />,
-      title: "Premium Support",
-      description: "24/7 dedicated support with enterprise SLAs and priority response times."
+      icon: <FaTrophy />,
+      title: "Achievement Badges",
+      description: "Earn recognition for milestones, consistent performance, and subject mastery with digital credentials."
     }
   ];
 
   const stats = [
-    { number: "99%", label: "Uptime Guarantee" },
-    { number: "5", label: "Active Users" },
-    { number: "0", label: "Transactions" },
-    { number: "India", label: "Country" }
+    { number: "10", label: "Test Attempts" },
+    { number: "15", label: "Practice Tests" },
+    { number: "15", label: "Subjects Covered" },
+    { number: "PAN India", label: "Student Network" }
   ];
 
   return (
@@ -64,35 +68,35 @@ const Home = ({ userName = "Visionary" }) => {
       <section className="hero">
         <div className="hero-content">
           <div className="badge-container">
-            <span className="badge">Limited Access 2026</span>
-            <span className="badge-status">System Online</span>
+            <span className="badge">🏆 India's Rising EdTech</span>
+            <span className="badge-status">Test Series 2026</span>
           </div>
 
           <h1 className="hero-title">
             Welcome back, <span className="user-highlight">{userName}</span>.<br />
-            <span className="gradient-text">Build the Extraordinary.</span>
+            <span className="gradient-text">Master in Your Exams with NA private limited solutions </span>
           </h1>
 
           <p className="hero-subtitle">
-            Your ideas deserve more than just a platform—they deserve a masterpiece. 
-            Leverage our premium infrastructure to turn complex workflows into 
-            seamless digital experiences.
+            Transform your preparation journey with our scientifically designed test series. 
+            From concept clarity to exam readiness — we guide you every step of the way with 
+            real-time insights and personalized learning paths.
           </p>
 
           <div className="hero-actions">
-            <Link to="/products" className="btn-primary">
-              Initialize Project
+            <Link to="/test-series" className="btn-primary">
+              Start Free Trial
               <span className="btn-glow"></span>
             </Link>
             <a href="#features" className="btn-secondary">
-              <span className="play-icon">✦</span> View Ecosystem
+              <span className="play-icon">✦</span> Explore Tests
             </a>
           </div>
           
           <div className="social-proof">
-            <p>Trusted by the most innovative members</p>
+            <p>Trusted by aspirants from</p>
             <div className="client-logos">
-              <span>SRINIVASA RAO</span> <span className="separator">•</span> 
+              <span>SRNIVASA RAO</span> <span className="separator">•</span> 
               <span>KUMAR SWAMI</span> <span className="separator">•</span> 
               <span>SAIEF</span> <span className="separator">•</span> 
               <span>RAHIM</span> <span className="separator">•</span> 
@@ -107,7 +111,7 @@ const Home = ({ userName = "Visionary" }) => {
               <div className="dot red"></div>
               <div className="dot yellow"></div>
               <div className="dot green"></div>
-              <div className="card-title">Support</div>
+              <div className="card-title">Live Test Performance</div>
             </div>
             <div className="card-body">
               <div className="skeleton-line long"></div>
@@ -115,18 +119,18 @@ const Home = ({ userName = "Visionary" }) => {
               <div className="skeleton-line short"></div>
               <div className="metric-group">
                 <div className="metric">
-                  <span className="metric-value">98%</span>
-                  <span className="metric-label">Performance</span>
+                  <span className="metric-value">85%</span>
+                  <span className="metric-label">Accuracy</span>
                 </div>
                 <div className="metric">
-                  <span className="metric-value">24/7</span>
-                  <span className="metric-label">Support</span>
+                  <span className="metric-value">Top 10%</span>
+                  <span className="metric-label">Your Rank</span>
                 </div>
               </div>
             </div>
-            <div className="floating-icon icon-1">💎</div>
+            <div className="floating-icon icon-1">📚</div>
             <div className="floating-icon icon-2">⚡</div>
-            <div className="floating-icon icon-3">🚀</div>
+            <div className="floating-icon icon-3">🎯</div>
           </div>
         </div>
       </section>
@@ -146,12 +150,12 @@ const Home = ({ userName = "Visionary" }) => {
       {/* Features Grid Section */}
       <section id="features" className="features-section">
         <div className="section-header">
-          <span className="section-badge">Why Choose Us</span>
+          <span className="section-badge">Education Test Series</span>
           <h2 className="section-title">
-            Everything you need to <span className="gradient-text">succeed</span>
+            Everything you need to <span className="gradient-text">ace your exams</span>
           </h2>
           <p className="section-subtitle">
-            Powerful features that help you build, scale, and grow your digital presence
+            From mock tests to performance analysis — a complete ecosystem for exam success
           </p>
         </div>
 
@@ -161,7 +165,7 @@ const Home = ({ userName = "Visionary" }) => {
               <div className="feat-icon">{feature.icon}</div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
-              <Link to="/products" className="feature-link">
+              <Link to="/test-series" className="feature-link">
                 Learn More <FaArrowRight className="arrow-icon" />
               </Link>
             </div>
@@ -172,42 +176,20 @@ const Home = ({ userName = "Visionary" }) => {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="cta-content">
-          <h2>Start your journey with us</h2>
-          <p>Join thousands of innovators who are already building the future with us</p>
+          <h2>Ready to transform your preparation?</h2>
+          <p>Join thousands of successful aspirants who trusted Weduction Test Series</p>
           <div className="cta-buttons">
             <Link to="/register" className="btn-primary cta-btn">
               Get Started Free
               <span className="btn-glow"></span>
             </Link>
-            <Link to="/products" className="btn-secondary cta-btn">
-              Explore Products
+            <Link to="/test-series" className="btn-secondary cta-btn">
+              View Test Series
               <FaArrowRight className="btn-icon" />
             </Link>
           </div>
         </div>
       </section>
-
-      {/* Newsletter Section */}
-      {/* <section className="newsletter">
-        <div className="newsletter-content">
-          <h3>Stay in the loop</h3>
-          <p>Get the latest updates, features, and insights delivered to your inbox</p>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Enter your email address"
-              required
-            />
-            <button type="submit">
-              Subscribe
-              <FaArrowRight className="btn-icon" />
-            </button>
-          </form>
-          <p className="newsletter-note">
-            No spam. Unsubscribe anytime.
-          </p>
-        </div>
-      </section> */}
     </main>
   );
 };

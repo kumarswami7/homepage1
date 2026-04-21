@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Footer from './pages/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/register" element={<Register />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );
