@@ -7,6 +7,12 @@
   padding: 100px 0;
   overflow: hidden;
 }
+.business-grid-premium{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
 
 /* Background Ambient Glow (Subtle Blue Tint) */
 .bg-blur-effect {

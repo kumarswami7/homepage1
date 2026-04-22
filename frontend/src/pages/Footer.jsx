@@ -1,5 +1,5 @@
 // Footer.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   FaFacebookF, 
@@ -12,11 +12,10 @@ import {
   FaMapMarkerAlt,
   FaArrowRight,
   FaClock,
-  FaShieldAlt,
   FaHeart
 } from 'react-icons/fa';
 import '../styles/Footer.css';
-import logo from '../../public/bg_removerd_logo.png'; // Update path as needed
+import logo from '../../src/assets/bg_removerd_logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,7 +35,6 @@ const Footer = () => {
     { name: "Contact Us", path: "/contact" },
     { name: "Privacy Policy", path: "/privacy" },
     { name: "Terms of Service", path: "/terms" },
-  
   ];
   
   const examCategories = [
@@ -50,6 +48,55 @@ const Footer = () => {
     { icon: <FaLinkedinIn />, link: "https://linkedin.com/company/weduction", label: "LinkedIn" },
     { icon: <FaYoutube />, link: "https://youtube.com/@weduction", label: "YouTube" }
   ];
+
+  // Scroll-triggered animations: toggles 'visible' class on enter/leave
+  useEffect(() => {
+    const animatedElements = document.querySelectorAll(
+      '.footer-column, .footer-newsletter, .footer-bottom'
+    );
+    
+    if (animatedElements.length === 0) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+    
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+    
+    // Initial check for elements already visible on mount
+    const checkVisibleOnLoad = () => {
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      animatedElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < windowHeight - 100) {
+          element.classList.add('visible');
+        }
+      });
+    };
+    
+    checkVisibleOnLoad();
+    window.addEventListener('resize', checkVisibleOnLoad);
+    
+    // Cleanup
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', checkVisibleOnLoad);
+    };
+  }, []);
   
   return (
     <footer className="footer">
@@ -62,16 +109,11 @@ const Footer = () => {
             <div className="footer-logo">
               <Link to="/" className="logo-link">
                 <img src={logo} alt="company Logo" className="logo-image1" />
-
               </Link>
             </div>
             <p className="brand-description">
               India's most innovative test series platform helping aspirants achieve their dreams through smart preparation and performance analytics.
             </p>
-            {/* <div className="trust-badge">
-              <FaShieldAlt className="shield-icon" />
-              <span>Trusted by 10,000+ Students</span>
-            </div> */}
             <div className="social-links">
               {socialIcons.map((social, index) => (
                 <a 
@@ -141,7 +183,7 @@ const Footer = () => {
                 <FaMapMarkerAlt className="contact-icon" />
                 <div className="contact-text">
                   <strong>Visit Us:</strong>
-                  <span>Ongole -  523001, India</span>
+                  <span>Ongole - 523001, India</span>
                 </div>
               </div>
               
@@ -157,8 +199,7 @@ const Footer = () => {
                 <FaEnvelope className="contact-icon" />
                 <div className="contact-text">
                   <strong>Email Us:</strong>
-                  <a href="mailto:support@weduction.com">support@weduction.com</a>
-                  <a href="mailto:hello@weduction.com">hello@weduction.com</a>
+                  <a href="mailto:support@weduction.com">07creativeai@gmail.com</a>
                 </div>
               </div>
               
@@ -166,39 +207,14 @@ const Footer = () => {
                 <FaClock className="contact-icon" />
                 <div className="contact-text">
                   <strong>Support Hours:</strong>
-                  <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
+                  <span>Mon - Sat: 9:00 AM - 4:00 PM</span>
+                  <span>Contact us 30 minutes before closing time for assistance.</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Newsletter Section */}
-      {/* <div className="footer-newsletter">
-        <div className="footer-container">
-          <div className="newsletter-wrapper">
-            <div className="newsletter-content">
-              <h4>Subscribe to Our Newsletter</h4>
-              <p>Get weekly updates on new test series, tips, and exclusive offers!</p>
-            </div>
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="input-group">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email address"
-                  required
-                />
-                <button type="submit">
-                  Subscribe
-                  <FaArrowRight />
-                </button>
-              </div>
-              <p className="form-note">No spam. Unsubscribe anytime.</p>
-            </form>
-          </div>
-        </div>
-      </div> */}
       
       {/* Bottom Bar */}
       <div className="footer-bottom">
