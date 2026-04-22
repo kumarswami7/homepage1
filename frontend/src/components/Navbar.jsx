@@ -137,7 +137,7 @@ const Navbar = () => {
           
           {!isAuthenticated ? (
             <>
-              <Link 
+              {/* <Link 
                 to="/login" 
                 className="nav-item-mobile login-mobile" 
                 onClick={closeMobileMenu}
@@ -150,7 +150,7 @@ const Navbar = () => {
                 onClick={closeMobileMenu}
               >
                 <FaUserPlus className="btn-icon" /> Create Account
-              </Link>
+              </Link> */}
             </>
           ) : (
             <button onClick={handleLogout} className="logout-mobile">
