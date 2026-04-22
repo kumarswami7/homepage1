@@ -29,7 +29,6 @@ const Navbar = () => {
     { name: "Home", path: "/", icon: <FaHome /> },
     { name: "Test Series", path: "/test-series", icon: <FaClipboardList /> },
     { name: "Features", path: "/#features", icon: <FaChartLine /> },
-    { name: "Pricing", path: "/pricing", icon: <FaGraduationCap /> },
   ];
 
   // Scroll effect for navbar background

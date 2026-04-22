@@ -6,6 +6,7 @@ import Products from './pages/Products';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Footer from './pages/Footer';
+import TestSeries from './pages/TestSeries';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path='/test-series' element={<TestSeries />} />
           </Routes>
         </main>
         <Footer />
